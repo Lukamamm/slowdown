@@ -20,7 +20,6 @@ jobs:
 
 
   push_to_registry:
-    name: push docker image to hub
     runs-on: ubuntu-latest
     steps:
       - name: check repository
