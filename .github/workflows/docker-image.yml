@@ -18,22 +18,3 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       name: Build and Push Docker Image to Docker Hub
 
-
-  push_to_registry:
-    runs-on: ubuntu-latest
-    steps:
-      - name: check repository
-        uses: actions/checkout@v4
-
-      - name: login to docker registry
-        uses: docker/login-action@v3
-        with:
-          username: lukamamm
-          password: luka2002
-
-      - name: build and push docker image to registry
-        uses: docker/build-push-action@v5
-        with:
-          context: DockerFileFolder/
-          push: true
-          tags: lukamamm/demo1:latest
